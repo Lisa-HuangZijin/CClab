@@ -1,0 +1,16 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    /*top: calc(50% - 400px);
+    left: calc(50% - 250px);*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
