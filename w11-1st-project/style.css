@@ -21,7 +21,7 @@ canvas {
 
 .title-text {
   position: absolute;
-  color: rgb(0, 0, 0);
+  color: rgb(224, 192, 32);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
