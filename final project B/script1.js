@@ -481,6 +481,7 @@ function tutor() {
   image(imgJump, 375, 45, 46, 46)
 
   textAlign(CENTER)
+  textSize(20)
   textFont(subFont)
   text("jump right!!!", 496, 457)
   text("haha~,get you~", 618, 370)
