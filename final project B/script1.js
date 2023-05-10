@@ -1,4 +1,4 @@
-let stageHistory = [];
+let stageHistory = 0;
 
 let character;
 let blocks = [];
