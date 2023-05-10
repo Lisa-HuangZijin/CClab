@@ -499,7 +499,7 @@ function setting() {
   textAlign(CENTER);
   fill(91, 125, 88);
 
-  //textFont(mainFont);
+  textFont(mainFont);
   textSize(100);
   text("SETTINGS", width / 2, 290);
 
