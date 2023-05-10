@@ -55,8 +55,7 @@ function draw() {
   stageHistory.push(stage);
 
   textSize(20);
-  text(mouseX, 40, 40);
-  text(mouseY, 80, 40);
+
 
   noStroke();
   ////////////////settings/////////////////
