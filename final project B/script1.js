@@ -50,14 +50,11 @@ function draw() {
     setting();
   }
   if (stage == 6) {
-    win()
+    win();
   }
-  stageHistory.push(stage);
-
-  textSize(20);
-
 
   noStroke();
+
   ////////////////settings/////////////////
   if (dist(mouseX, mouseY, 850, 49) < 20) {
     setSize = 50;
@@ -65,10 +62,13 @@ function draw() {
     setSize = 40;
   }
   image(imgSet, 830, 28, setSize, setSize);
+}
 
-
+function mousePressed() {
+  // Moon: have another variable
   if (mouseIsPressed) {
     if (dist(mouseX, mouseY, 850, 49) < 20) {
+      stageHistory = stage; // ***
       stage = 5; //settings stage
     }
   }
@@ -245,7 +245,8 @@ function mainMenu() {
   textSize(100);
   textFont(mainFont);
   text("BALANCE", width / 2, 200); //title
-
+  //rect(380,275,140,70)
+  //rect(380,380,140,70)
   if (mouseX > 380 && mouseX < 520 && mouseY > 275 && mouseY < 345) {
     changeSize1 = 96;
   } else {
@@ -286,6 +287,11 @@ function level1() {
   blocks[3] = new Block(width / 2 - 50 + 65, 260, 100, 10);
   blocks[4] = new Block(width / 2 - 50 - 65, 170, 100, 10);
   blocks[5] = new Block(width / 2 - 50 + 65, 80, 100, 10);
+  blocks[6] = new Block(-100, 10, 10, 10);
+  blocks[7] = new Block(-100, 10, 10, 10);
+  blocks[8] = new Block(-100, 10, 10, 10);
+  blocks[9] = new Block(-100, 10, 10, 10);
+  blocks[10] = new Block(-100, 10, 10, 10);
 
   if (checkColor == false) {
     background(63, 62, 160);
@@ -314,7 +320,6 @@ function level1() {
   cy = 34 + map(sin(frameCount * 0.042), -1, 1, -5, 8);
   image(imgCoin, 498, cy, 30, 30);
 
-
   if (
     character.x < 498 &&
     character.x + character.r > 498 + 30 &&
@@ -334,6 +339,10 @@ function level2() {
   blocks[4] = new Block(20, 20, 10, 100);
   blocks[5] = new Block(150, 220, 100, 10);
   blocks[6] = new Block(250, 350, 100, 10);
+  blocks[7] = new Block(-100, 10, 10, 10);
+  blocks[8] = new Block(-100, 10, 10, 10);
+  blocks[9] = new Block(-100, 10, 10, 10);
+  blocks[10] = new Block(-100, 10, 10, 10);
 
   if (checkColor == false) {
     background(91, 125, 88);
@@ -363,7 +372,6 @@ function level2() {
   cy = 350 + map(sin(frameCount * 0.042), -1, 1, -5, 8);
   image(imgCoin, 838, cy, 30, 30);
 
-
   if (
     character.x < 838 &&
     character.x + character.r > 838 + 30 &&
@@ -380,15 +388,13 @@ function level3() {
   blocks[1] = new Block(-15, 460, 100, 10);
   blocks[2] = new Block(825, 370, 100, 10);
   blocks[3] = new Block(-15, 280, 100, 10);
-  blocks[4] = new Block(825, 190, 100, 10)
-  blocks[5] = new Block(605, 140, 140, 10)
-  blocks[6] = new Block(390, 166, 120, 10)
-  blocks[7] = new Block(390, 250, 120, 10)//final block
-  blocks[8] = new Block(375, 176, 10, 50)
-  blocks[9] = new Block(-100, 176, 10, 10)
-  blocks[10] = new Block(515, 176, 10, 50)
-
-
+  blocks[4] = new Block(825, 190, 100, 10);
+  blocks[5] = new Block(605, 140, 140, 10);
+  blocks[6] = new Block(390, 166, 120, 10);
+  blocks[7] = new Block(390, 250, 120, 10); //final block
+  blocks[8] = new Block(375, 176, 10, 50);
+  blocks[9] = new Block(-100, 176, 10, 10);
+  blocks[10] = new Block(515, 176, 10, 50);
 
   if (checkColor == false) {
     background(243, 143, 0);
@@ -419,7 +425,6 @@ function level3() {
   cy = 204 + map(sin(frameCount * 0.042), -1, 1, -5, 8);
   image(imgCoin, 433, cy, 30, 30);
 
-
   if (
     character.x < 433 &&
     character.x + character.r > 433 + 30 &&
@@ -436,7 +441,12 @@ function tutor() {
   blocks[2] = new Block(width / 2 + 240, 350, 100, 10);
   blocks[3] = new Block(width / 2 + 360, 260, 100, 10);
   blocks[4] = new Block(-20, 170, 100, 10);
-
+  blocks[5] = new Block(-100, 10, 10, 10);
+  blocks[6] = new Block(-100, 10, 10, 10);
+  blocks[7] = new Block(-100, 10, 10, 10);
+  blocks[8] = new Block(-100, 10, 10, 10);
+  blocks[9] = new Block(-100, 10, 10, 10);
+  blocks[10] = new Block(-100, 10, 10, 10);
 
   if (checkColor == false) {
     background(245, 231, 198);
@@ -464,6 +474,8 @@ function tutor() {
   character.move();
   cy = 111 + map(sin(frameCount * 0.042), -1, 1, -5, 8);
   image(imgCoin, 26, cy, 30, 30);
+
+  image(imgCoin, 26, cy, 30, 30);
   image(imgLeft, 245, 45, 46, 46)
   image(imgRight, 310, 45, 46, 46)
   image(imgJump, 375, 45, 46, 46)
@@ -477,7 +489,7 @@ function tutor() {
   text("get here and jump", 501, 637)
 
   fill(255)
-  //rect(381,71,90,20)
+
   text("left", 267, 116)
   text("right", 334, 116)
   text("jump", 398, 116)
@@ -513,14 +525,12 @@ function setting() {
   }
   textFont(subFont);
   textSize(changeSize1);
-  text("Main Menu", 680, 585);
+  text("Main Manue", 680, 585);
 
   if (mouseX > 83 && mouseX < 220 && mouseY > 535 && mouseY < 585) {
     changeSize2 = 90;
     if (mouseIsPressed) {
-      stageHistory.pop();
-      let formerStage = stageHistory.pop(); // get former value
-      stage = formerStage; // set stage to former value
+      stage = stageHistory; // set stage to former value
     }
   } else {
     changeSize2 = 80;
@@ -533,30 +543,27 @@ function win() {
   //stage 6
   background(63, 62, 106);
   textAlign(CENTER);
-  fill(227, 151, 112)
+  fill(227, 151, 112);
 
-  textFont(mainFont)
-  textSize(70)
-  text("Congratulations!", width / 2, 200)
-  textSize(winSize)
-  text("main menu", 187, 590)
+  textFont(mainFont);
+  textSize(70);
+  text("Congratulations!", width / 2, 200);
+  textSize(winSize);
+  text("main menu", 187, 590);
 
-
-  textSize(50)
-  textFont(subFont)
-  text("You are really", width / 2, 300)
-  text("skilled at ", width / 2, 370)
-  text("keeping a balance!", width / 2, 440)
-
-
+  textSize(50);
+  textFont(subFont);
+  text("You are really", width / 2, 300);
+  text("skilled at ", width / 2, 370);
+  text("keeping a balance!", width / 2, 440);
 
   if (mouseX > 62 && mouseX < 311 && mouseY > 567 && mouseY < 590) {
-    winSize = 50
+    winSize = 50;
     if (mouseIsPressed) {
-      stage = 0
+      stage = 0;
     }
   } else {
-    winSize = 40
+    winSize = 40;
   }
   character.show();
   character.move();
