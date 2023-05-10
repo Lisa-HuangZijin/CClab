@@ -526,7 +526,7 @@ function setting() {
   }
   textFont(subFont);
   textSize(changeSize1);
-  text("Main Manue", 680, 585);
+  text("Main Menu", 680, 585);
 
   if (mouseX > 83 && mouseX < 220 && mouseY > 535 && mouseY < 585) {
     changeSize2 = 90;
