@@ -56,12 +56,14 @@ function draw() {
   noStroke();
 
   ////////////////settings/////////////////
-  if (dist(mouseX, mouseY, 850, 49) < 20) {
-    setSize = 50;
-  } else {
-    setSize = 40;
+  if (stage !== 5) {
+    if (dist(mouseX, mouseY, 850, 49) < 20) {
+      setSize = 50;
+    } else {
+      setSize = 40;
+    }
+    image(imgSet, 830, 28, setSize, setSize);
   }
-  image(imgSet, 830, 28, setSize, setSize);
 }
 
 function mousePressed() {
