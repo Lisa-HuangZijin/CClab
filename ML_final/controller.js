@@ -5,7 +5,7 @@
 // files. Make sure to duplicate it, rather than copying
 // and pasting code :)
 
-
+let openai_api_proxy = "https://sordid-hexagonal-bunny.glitch.me/";
 
 // The main input is the messages parameter (i.e. the entire conversation
 // up to this point). Typically, a conversation is formatted with a system
