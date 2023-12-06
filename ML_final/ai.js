@@ -46,7 +46,11 @@ function preload() {
 
 function setup() {
     let canvas = createCanvas(1000, 700);
-    canvas.parent("p5-container")
+    canvas.parent("p5-container");
+    inp = createInput();
+    btn = createButton("Send");
+    btn.parent("p5-container");
+    inp.parent("p5-container");
 
     background(bgColor);
     passM();
@@ -126,11 +130,11 @@ function passM() {
     //console.log("work");
     background(bgColor);
     //image(M,0,0,1000,700)
-    inp = createInput();
-    inp.position(200, height - 60);
+    // inp = createInput();
+    inp.position(200, height * 0.9);
     inp.size(550, 30);
-    btn = createButton("Send");
-    btn.position(760, height - 60);
+    // btn = createButton("Send");
+    btn.position(760, height * 0.9);
     btn.size(70, 35);
     btn.mousePressed(sendMessage);
     image(ai, -50, height / 2 - 30, 320, 320)
